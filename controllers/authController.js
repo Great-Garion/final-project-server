@@ -45,6 +45,4 @@ module.exports = {
       res.json({ message: error.message || "internal server error" });
     }
   },
-
-  
 };

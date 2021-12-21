@@ -1,11 +1,11 @@
-const users = require("../models/user");
+const transport = require("../models/transport");
 
 module.exports = {
-  getAllUser: async (req, res) => {
+  getAllTransport: async (req, res) => {
     try {
-      const Users = await users.find({}, "-password -__v");
+      const Transport = await transport.find({}, "-__v");
 
-      res.json(Users);
+      res.json(Transport);
     } catch (error) {
       console.log(error);
       res.status(500).json({
@@ -14,40 +14,12 @@ module.exports = {
     }
   },
 
-  getUserByID: async (req, res) => {
-    try {
-      const { id } = req.params;
-      const userByID = await users.findById(id, "-password -__v");
-
-      res.json(userByID);
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({
-        message: error.message || "Internal Server Error",
-      });
-    }
-  },
-
-  addUser: async (req, res) => {
-    try {
-      let postUser = req.body;
-      await users.create(postUser);
-
-      res.json("user has been created");
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({
-        message: error.message || "Internal Server Error",
-      });
-    }
-  },
-
-  deleteUser: async (req, res) => {
+  getTransportByID: async (req, res) => {
     try {
       const { id } = req.params;
-      await users.findByIdAndDelete(id);
+      const transportByID = await transport.findById(id, "-__v");
 
-      res.json("successfully deleted user");
+      res.json(transportByID);
     } catch (error) {
       console.log(error);
       res.status(500).json({
@@ -56,19 +28,46 @@ module.exports = {
     }
   },
 
-  editUser: async (req, res) => {
+  addTransport: async (req, res) => {
+    try {
+      let postTransport = req.body;
+      await transport.create(postTransport);
+
+      res.json("Transport has been created");
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        message: error.message || "Internal Server Error",
+      });
+    }
+  },
+
+  deleteTransport: async (req, res) => {
+    try {
+      const { id } = req.params;
+      await transport.findByIdAndDelete(id);
+
+      res.json("deleted Transport successfull");
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        message: error.message || "Internal Server Error",
+      });
+    }
+  },
+
+  editTransport: async (req, res) => {
     try {
       const { id } = req.params;
       const update = {
-        fullname: req.body.fullname,
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
+        name: req.body.name,
+        price: req.body.price,
+        contact: req.body.contact,
       };
 
       await users.findByIdAndUpdate(id, update);
 
-      res.json("successfully updated user");
+      res.json("Updated Transport successfull");
     } catch (error) {
       console.log(error);
       res.status(500).json({
