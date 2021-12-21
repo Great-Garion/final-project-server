@@ -8,6 +8,7 @@ const {
   deleteUser,
   editUser,
 } = require("../controllers/userController");
+
 router.get("/", getAllUser);
 
 router.get("/:id", getUserByID);
