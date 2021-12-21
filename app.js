@@ -1,11 +1,18 @@
 const express = require("express");
 const app = express();
-const port = 3000;
 
-app.get("/", (req, res) => {
-  res.json("Great Garion");
+const router = require("./routes")
+const PORT = process.env.PORT || 3000;
+
+const db = require("./config/connect")
+
+app.use(express.json());
+app.use(router)
+
+db.connection.on("error", (err) => {
+  console.log(err);
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log("Loka Kota From Express Running on PORT " + PORT);
 });
