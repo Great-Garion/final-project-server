@@ -1,4 +1,4 @@
-const transport = require("../models/transport");
+const transport = require("../models/Transport");
 
 module.exports = {
   getAllTransport: async (req, res) => {

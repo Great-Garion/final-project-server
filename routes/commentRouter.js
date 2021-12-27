@@ -7,7 +7,7 @@ const {
   addNewComment,
   deleteComment,
   editComment,
-} = require("../controllers/commentController");
+} = require("../controllers/CommentController");
 
 router.get("/", getAllComment);
 router.get("/:id", getCommentByID);
