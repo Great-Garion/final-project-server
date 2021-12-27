@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const User = require("../models/user");
+const User = require("../models/User");
 
 module.exports = {
   addRegis: async (req, res) => {
@@ -45,6 +45,4 @@ module.exports = {
       res.json({ message: error.message || "internal server error" });
     }
   },
-
-  
 };
