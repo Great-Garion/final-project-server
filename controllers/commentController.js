@@ -1,4 +1,4 @@
-const comments = require("../models/comment");
+const comments = require("../models/Comment");
 
 module.exports = {
   getAllComment: async (req, res) => {
