@@ -1,12 +1,18 @@
 const express = require("express");
 const router = express.Router();
 
-const storeRouter = require ("./StoreRouter.js")
+const validateToken = require("../middleware/Middleware");
+
+const storeRouter = require ("./storeRouter.js")
 const transportRouter = require("./transportRouter");
 const authRouter = require("./authRouter");
 const userRouter = require("./userRouter");
 const commentRouter = require("./commentRouter");
-const validateToken = require("../middleware/Middleware");
+const descRouter = require("./descRouter")
+const infoRouter = require("./infoRouter")
+const kabSumbarRouter = require('./kabSumbarRouter')
+const kabSumberRouter = require("./kabSumberRouter")
+const wisataRouter = require("./wisataRouter")
 
 router.get("/", (req, res) => {
   res.json("Loka Kota");
@@ -14,7 +20,11 @@ router.get("/", (req, res) => {
 
 router.use("/store", storeRouter)
 router.use("/transport", transportRouter);
-
+router.use("/desciption", descRouter)
+router.use("/information", infoRouter)
+router.use("/Sumbawa", kabSumberRouter)
+router.use("/ksb", kabSumbarRouter)
+router.use("/wisata", wisataRouter)
 router.use("/auth", authRouter);
 
 // router.use(validateToken);
