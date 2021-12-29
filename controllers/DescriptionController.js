@@ -63,7 +63,7 @@ module.exports = {
             addres: req.body.addres,
             attractions: req.body.attractions,
             contact_us: req.body.contact_us,
-            information: desc.information
+            information: req.body.information
           };
     
           await Descs.findByIdAndUpdate(id, update);

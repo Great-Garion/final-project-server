@@ -63,9 +63,9 @@ module.exports = {
             tourism_spot: req.body.tourism_spot,
             image: req.body.image,
             description: sumber.description,
-            store: sumber.store,
+            store: req.body.store,
             transportation: sumber.transportation,
-            comment: sumber.comment
+            comment: req.body.comment
           };
     
           await sumber.findByIdAndUpdate(id, update);

@@ -60,8 +60,8 @@ module.exports = {
         try {
           const { id } = req.params;
           const update = {
-           sumbawa: lokaKota.sumbawa,
-           sumbawa_barat: lokaKota.sumbawa_barat
+           sumbawa: req.body.sumbawa,
+           sumbawa_barat: req.body.sumbawa_barat
           };
     
           await lokaKota.findByIdAndUpdate(id, update);

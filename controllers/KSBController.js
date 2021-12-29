@@ -62,10 +62,10 @@ module.exports = {
           const update = {
             tourism_spot: req.body.tourism_spot,
             image: req.body.image,
-            description: sumbar.description,
-            store: sumbar.store,
-            transportation: sumbar.transportation,
-            comment: sumbar.comment
+            description: req.body.description,
+            store: req.body.store,
+            transportation: req.body.transportation,
+            comment: req.body.comment
           };
     
           await sumbar.findByIdAndUpdate(id, update);
