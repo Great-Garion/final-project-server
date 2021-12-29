@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const dataStore = new Schema({
   name: String,
   imgProduct: String,
-  ProductDescription: String,
+  productDescription: String,
   contactStore: String,
 });
 

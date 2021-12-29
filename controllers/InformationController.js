@@ -1,11 +1,11 @@
-const comments = require("../models/Comment");
+const info = require("../models/Information");
 
 module.exports = {
-  getAllComment: async (req, res) => {
+  getAllInfo: async (req, res) => {
     try {
-      const allComment = await comments.find({}, "-__v").populate("user", "-__v -password");
+      const allInfo = await info.find({}, "-__v");
 
-      res.json(allComment);
+      res.json(allInfo);
     } catch (error) {
       console.log(error);
       res.status(500).json({
@@ -14,12 +14,12 @@ module.exports = {
     }
   },
 
-  getCommentByID: async (req, res) => {
+  getInfoByID: async (req, res) => {
     try {
       const { id } = req.params;
-      const commentByID = await comments.findById(id);
+      const InfoByID = await info.findById(id, "-__v");
 
-      res.json(commentByID);
+      res.json(InfoByID);
     } catch (error) {
       console.log(error);
       res.status(500).json({
@@ -28,12 +28,12 @@ module.exports = {
     }
   },
 
-  addNewComment: async (req, res) => {
+  addNewInfo: async (req, res) => {
     try {
-      const newComment = req.body;
-      await comments.create(newComment);
+      const newInfo = req.body;
+      await info.create(newInfo);
 
-      res.json("Adding New Comment is success");
+      res.json("Adding New Info is success");
     } catch (error) {
       console.log(error);
       res.status(500).json({
@@ -42,12 +42,12 @@ module.exports = {
     }
   },
 
-  deleteComment: async (req, res) => {
+  deleteInfo: async (req, res) => {
     try {
       const { id } = req.params;
-      await comments.findByIdAndDelete(id);
+      await info.findByIdAndDelete(id);
 
-      res.json("Deleted a Comment is Success");
+      res.json("Deleted a Info is Success");
     } catch (error) {
       console.log(error);
       res.status(500).json({
@@ -56,17 +56,19 @@ module.exports = {
     }
   },
 
-  editComment: async (req, res) => {
+  editInfo: async (req, res) => {
     try {
       const { id } = req.params;
       const update = {
-        user: req.body.user,
-        comment: req.body.comment,
+        police: req.body.police,
+        hospital: req.body.hospital,
+        hotel: req.body.hotel,
+        worship: req.body.worship,
       };
 
-      await comments.findByIdAndUpdate(id, update);
+      await info.findByIdAndUpdate(id, update);
 
-      res.json("Editing a Comment Success");
+      res.json("Editing a Info Success");
     } catch (error) {
       res.status(500).json({
         message: err.message || "Internal Server Error",

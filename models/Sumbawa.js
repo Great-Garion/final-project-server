@@ -14,7 +14,7 @@ const dataSumbawa = new Schema ({
     },
     transportation: {
         type: Types.ObjectId,
-        ref: "transportation"
+        ref: "transport"
     },
     comment: {
         type: Types.ObjectId,

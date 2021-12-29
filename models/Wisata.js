@@ -8,7 +8,7 @@ const dataWisata = new Schema ({
     },
     Sumbawa_Barat: {
         type: Types.ObjectId,
-        ref: "KSB"
+        ref: "sumbawa_barat"
     }
 })
 
