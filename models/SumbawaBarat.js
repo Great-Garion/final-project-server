@@ -15,7 +15,7 @@ const dataKSB = new Schema ({
     },
     transportation: {
         type: Types.ObjectId,
-        ref: "transportation"
+        ref: "transport"
     },
     comment: {
         type: Types.ObjectId,
@@ -23,6 +23,6 @@ const dataKSB = new Schema ({
     }
 })
 
-const KSB = mongoose.model("Sumbawa", dataKSB)
+const KSB = mongoose.model("Sumbawa_barat", dataKSB)
 
 module.exports = KSB
