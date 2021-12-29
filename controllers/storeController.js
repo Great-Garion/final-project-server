@@ -63,6 +63,7 @@ module.exports = {
         name: req.body.name,
         imgProduct: req.body.imgProduct,
         productDescription: req.body.productDescription,
+        contactStore: req.body.contactStore
       };
 
       await stores.findByIdAndUpdate(id, update);
