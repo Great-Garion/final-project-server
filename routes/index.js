@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const validateToken = require("../middleware/Middleware");
+const validateToken = require("../middleware/auth");
 
 const storeRouter = require ("./storeRouter.js")
 const transportRouter = require("./transportRouter");
