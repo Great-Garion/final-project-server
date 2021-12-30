@@ -6,7 +6,7 @@ const {
   addDataWisata,
   deleteDataWisata,
   editDataWisata,
-} = require("../controllers/WisataController");
+} = require("../controllers/wisataController");
 
 router.get("/", getAllDataWisata);
 router.get("/:id", getDataWisataByID);
