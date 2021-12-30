@@ -28,7 +28,7 @@ router.use("/ksb", kabSumbarRouter)
 router.use("/wisata", wisataRouter)
 router.use("/auth", authRouter);
 
-// router.use(validateToken);
+router.use(validateToken);
 
 router.use("/user", userRouter);
 router.use("/comment", commentRouter);
