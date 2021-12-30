@@ -7,7 +7,7 @@ const {
   addStore,
   deleteStore,
   editStore,
-} = require("../controllers/StoreController");
+} = require("../controllers/storeController");
 
 router.get("/", getAllStore);
 router.get("/id", getStorebyID);

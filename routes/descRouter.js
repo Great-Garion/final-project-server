@@ -7,7 +7,7 @@ const {
   addDesc,
   deleteDesc,
   editDesc,
-} = require("../controllers/DescriptionController");
+} = require("../controllers/descriptionController");
 
 router.get("/", getAllDesc);
 router.get("/:id", getDescbyID);

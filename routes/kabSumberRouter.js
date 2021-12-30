@@ -7,7 +7,7 @@ const {
   addDWS,
   deleteDWS,
   editDWS,
-} = require("../controllers/SumbawaController");
+} = require("../controllers/sumbawaController");
 
 router.get("/", getAllDWS);
 router.get("/:id", getDWSbyID);

@@ -7,7 +7,7 @@ const {
   addNewInfo,
   deleteInfo,
   editInfo,
-} = require("../controllers/InformationController");
+} = require("../controllers/informationController");
 
 router.get("/", getAllInfo);
 router.get("/:id", getInfoByID);
