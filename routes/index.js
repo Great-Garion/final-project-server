@@ -4,7 +4,7 @@ const router = express.Router();
 const validateToken = require("../middleware/auth");
 
 
-const storeRouter = require ("./storeRouter.js")
+const storeRouter = require ("./StoreRouter.js")
 const transportRouter = require("./transportRouter");
 const authRouter = require("./authRouter");
 const userRouter = require("./userRouter");
