@@ -4,7 +4,7 @@ module.exports = {
     getAllDataWisata: async (req, res) => {
         try {
           const dataWisata = await lokaKota.find({}, "-__v");
-    
+
           res.json(dataWisata);
         } catch (error) {
           console.log(error);

@@ -19,12 +19,12 @@ router.get("/", (req, res) => {
   res.json("Loka Kota");
 });
 
-router.use("/store", storeRouter)
-router.use("/transport", transportRouter);
-router.use("/desciption", descRouter)
-router.use("/information", infoRouter)
-router.use("/Sumbawa", kabSumberRouter)
-router.use("/ksb", kabSumbarRouter)
+// router.use("/store", storeRouter)
+// router.use("/transport", transportRouter);
+// router.use("/desciption", descRouter)
+// router.use("/information", infoRouter)
+// router.use("/Sumbawa", kabSumberRouter)
+// router.use("/ksb", kabSumbarRouter)
 router.use("/wisata", wisataRouter)
 router.use("/auth", authRouter);
 

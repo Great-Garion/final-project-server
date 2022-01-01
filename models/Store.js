@@ -6,6 +6,7 @@ const dataStore = new Schema({
   imgProduct: String,
   productDescription: String,
   contactStore: String,
+  jarak: String
 });
 
 const store = mongoose.model("store", dataStore);

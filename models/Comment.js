@@ -7,6 +7,11 @@ const dataComment = new Schema({
     ref: "user",
   },
   Comment: String,
+  Bintang: Number,
+  wisata: {
+    type: Types.ObjectId,
+    ref: "wisata"
+  }
 });
 
 const Comment = mongoose.model("comment", dataComment);
