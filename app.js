@@ -8,13 +8,13 @@ const PORT = process.env.PORT || 3000;
 
 const db = require("./config/connect")
 
-app.use(cors())
-app.use(express.json());
-app.use(router)
-
 db.connection.on("error", (err) => {
   console.log(err);
 });
+
+app.use(cors())
+app.use(express.json());
+app.use(router)
 
 app.listen(PORT, () => {
   console.log("Loka Kota From Express Running on PORT " + PORT);

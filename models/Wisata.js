@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
-const { Schema, Types } = mongoose;
+const { Schema } = mongoose;
 
 const dataWisata = new Schema ({
     tourism_spot: String,
-    image: String,
+    image: [String],
     address: String,
     desc: String,
     kabupaten: String,
-    attractions: String,
-    contact_us: String,
+    attractions: [String],
+    contact_us: [String],
     police: [String],
     hospital:[String],
     hotel: [String],
