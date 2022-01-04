@@ -6,8 +6,8 @@ const dataComment = new Schema({
     type: Types.ObjectId,
     ref: "user",
   },
-  Comment: String,
-  Bintang: Number,
+  review: String,
+  rating: Number,
   wisata: {
     type: Types.ObjectId,
     ref: "wisata"
