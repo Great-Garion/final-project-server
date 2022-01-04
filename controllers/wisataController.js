@@ -3,9 +3,15 @@ const lokaKota = require("../models/Wisata");
 module.exports = {
   getAllDataWisata: async (req, res) => {
     try {
-      const dataWisata = await lokaKota.find({}, "-__v");
+      const { kabupaten } = req.query;
 
-      res.json(dataWisata);
+      if (kabupaten) {
+        const wisataByKab = await lokaKota.find({ kabupaten });
+        res.json(wisataByKab);
+      } else {
+        const dataWisata = await lokaKota.find({}, "-__v");
+        res.json(dataWisata);
+      }
     } catch (error) {
       console.log(error);
       res.status(500).json({
@@ -63,7 +69,7 @@ module.exports = {
         tourism_spot: req.body.tourism_spot,
         image: req.body.image,
         address: req.body.address,
-        desc: req.body.desc,
+        desciption: req.body.desc,
         kabupaten: req.body.kabupaten,
         attractions: req.body.attractions,
         contact_us: req.body.contact_us,
@@ -73,6 +79,9 @@ module.exports = {
         restaurant: req.body.restaurant,
         worship: req.body.worship,
         jarak: req.body.jarak,
+        transport: req.body.transport,
+        waktu: req.body.waktu
+
       };
 
       await lokaKota.findByIdAndUpdate(id, update);
