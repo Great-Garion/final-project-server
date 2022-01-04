@@ -5,7 +5,7 @@ const dataWisata = new Schema ({
     tourism_spot: String,
     image: [String],
     address: String,
-    desc: String,
+    desciption: String,
     kabupaten: String,
     attractions: [String],
     contact_us: [String],

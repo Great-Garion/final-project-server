@@ -2,10 +2,19 @@ const comments = require("../models/Comment");
 
 module.exports = {
   getAllComment: async (req, res) => {
+    //cari komen berdasarkan id wisata, query yg tampilin id wisata
+    // console.log(wisata)
     try {
+      const {wisata} = req.query
+      const dataWisata = await comments.find({wisata})
       const allComment = await comments.find({}, "-__v").populate("user", "-__v -password");
 
-      res.json(allComment);
+      if(wisata){
+        res.json(dataWisata)
+      }
+      else{
+        res.json(allComment)
+      }
     } catch (error) {
       console.log(error);
       res.status(500).json({
