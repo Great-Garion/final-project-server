@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const comments = require("../models/Comment");
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
     // console.log(wisata)
     try {
       const {wisata} = req.query
-      const dataWisata = await comments.find({wisata})
+      const dataWisata = await comments.find({wisata: mongoose.Types.ObjectId(wisata)})
       const allComment = await comments.find({}, "-__v").populate("user", "-__v -password");
 
       if(wisata){
