@@ -69,7 +69,7 @@ module.exports = {
         tourism_spot: req.body.tourism_spot,
         image: req.body.image,
         address: req.body.address,
-        desciption: req.body.desc,
+        desciption: req.body.desciption,
         kabupaten: req.body.kabupaten,
         attractions: req.body.attractions,
         contact_us: req.body.contact_us,
