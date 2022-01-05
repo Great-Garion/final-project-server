@@ -8,7 +8,7 @@ module.exports = {
       const { wisata } = req.query;
 
       if (wisata) {
-        const commentByWisata = await comments.find({ wisata });
+        const commentByWisata = await comments.find({ wisata }).populate("user", "-__v -password")
         res.json(commentByWisata);
       } else {
         const allComment = await comments
@@ -27,7 +27,7 @@ module.exports = {
   getCommentByID: async (req, res) => {
     try {
       const { id } = req.params;
-      const commentByID = await comments.findById(id);
+      const commentByID = await comments.findById(id).populate("user", "-__v -password");
 
       res.json(commentByID);
     } catch (error) {
