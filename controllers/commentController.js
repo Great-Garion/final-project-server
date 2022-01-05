@@ -8,9 +8,7 @@ module.exports = {
       const { wisata } = req.query;
 
       if (wisata) {
-        const commentByWisata = await comments.find({
-          wisata: mongoose.Types.ObjectId(wisata),
-        });
+        const commentByWisata = await comments.find({ wisata });
         res.json(commentByWisata);
       } else {
         const allComment = await comments
