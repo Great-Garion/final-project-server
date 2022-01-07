@@ -16,7 +16,8 @@ const dataWisata = new Schema ({
     worship: [String],
     jarak: [String],
     transport: [String],
-    waktu: [String]
+    waktu: [String],
+    maps: String
     // store: {
     //     type: Types.ObjectId,
     //     ref: "store"
