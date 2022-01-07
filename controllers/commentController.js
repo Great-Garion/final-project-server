@@ -41,6 +41,7 @@ module.exports = {
   addNewComment: async (req, res) => {
     try {
       const newComment = req.body;
+      newComment.user = req.payload._id
       await comments.create(newComment);
 
       res.json("Adding New Comment is success");
